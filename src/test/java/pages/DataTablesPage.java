@@ -23,7 +23,6 @@ public class DataTablesPage extends Form {
     }
 
     private List<ILabel> getFirstDueLblList() {
-        return AqualityServices.getElementFactory().findElements(DUE, "due",
-                ElementType.LABEL);
+        return AqualityServices.getElementFactory().findElements(DUE, "due", ElementType.LABEL);
     }
 }

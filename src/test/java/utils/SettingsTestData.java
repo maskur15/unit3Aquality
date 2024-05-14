@@ -26,7 +26,7 @@ public class SettingsTestData {
     }
 
     public EnvData getEnvData() {
-        String envConfigPath = String.format("%s%s.json", ENVIRONMENT_PATH, getCurrentEnvironment());
+        String envConfigPath = "%s%s.json".formatted(ENVIRONMENT_PATH, getCurrentEnvironment());
         return deserializeJson(envConfigPath, EnvData.class);
     }
 
