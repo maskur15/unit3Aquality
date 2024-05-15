@@ -21,10 +21,6 @@ public class SettingsTestData {
     private final ISettingsFile ENVIRONMENT_CONFIG = new JsonSettingsFile("env.json");
     private final Gson GSON = new Gson();
 
-    private String getCurrentEnvironment() {
-        return ENVIRONMENT_CONFIG.getValue("/env").toString();
-    }
-
     public EnvData getEnvData() {
         String envConfigPath = "%s%s.json".formatted(ENVIRONMENT_PATH, getCurrentEnvironment());
         return deserializeJson(envConfigPath, EnvData.class);
@@ -40,6 +36,10 @@ public class SettingsTestData {
 
     public FileData getFileData() {
         return deserializeJson(FILE_DATA_PATH, FileData.class);
+    }
+
+    private String getCurrentEnvironment() {
+        return ENVIRONMENT_CONFIG.getValue("/env").toString();
     }
 
     private <T> T deserializeJson(String filePath, Class<T> tClass) {
