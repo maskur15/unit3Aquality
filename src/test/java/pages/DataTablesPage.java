@@ -11,7 +11,7 @@ import java.util.List;
 
 public class DataTablesPage extends Form {
     private static final String NAME = "Data Tables";
-    private final By DUE = By.xpath("//*[@id='table1']//td[4]");
+    private final By due = By.xpath("//*[@id='table1']//td[4]");
 
     public DataTablesPage() {
         super(By.xpath(String.format(LocatorConstants.PRECISE_TEXT_XPATH, NAME)), NAME);
@@ -23,6 +23,6 @@ public class DataTablesPage extends Form {
     }
 
     private List<ILabel> getFirstDueLblList() {
-        return AqualityServices.getElementFactory().findElements(DUE, "due", ElementType.LABEL);
+        return AqualityServices.getElementFactory().findElements(due, "due", ElementType.LABEL);
     }
 }
