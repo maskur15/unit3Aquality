@@ -45,8 +45,7 @@ public class SettingsTestData {
     private <T> T deserializeJson(String filePath, Class<T> tClass) {
         try {
             return GSON.fromJson(new FileReader(filePath), tClass);
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             AqualityServices.getLogger().error("Settings file %s not found or incorrect. Error msg: %s".formatted(filePath, e));
             throw new RuntimeException(e);
         }

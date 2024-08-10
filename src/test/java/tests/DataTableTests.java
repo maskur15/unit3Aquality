@@ -14,7 +14,7 @@ public class DataTableTests extends BaseTest {
     public void dataTableTest() {
         mainPage.clickNavigationLink(MainPageNavigation.SORTABLE_DATA_TABLES);
         Double actualSum = 0.0;
-        for (String due: dataTablesPage.getFirstDueList()) {
+        for (String due : dataTablesPage.getFirstDueList()) {
             actualSum += StringUtils.getDoubleFromString(due);
         }
         Assert.assertEquals(actualSum, SettingsTestData.getDataTableData().getExpectedDueSum(), "Sum is not correct");

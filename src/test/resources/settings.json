@@ -1,9 +1,8 @@
 {
-  "browserName" : "chrome",
+  "browserName": "chrome",
   "isRemote": false,
   "remoteConnectionUrl": "http://localhost:4444/wd/hub",
-  "isElementHighlightEnabled" : true,
-
+  "isElementHighlightEnabled": true,
   "driverSettings": {
     "chrome": {
       "capabilities": {
@@ -79,7 +78,11 @@
         "download.prompt_for_download": "false",
         "download.default_directory": "./downloads"
       },
-      "startArguments": [ "--remote-debugging-port=9222", "--no-sandbox", "--disable-dev-shm-usage" ]
+      "startArguments": [
+        "--remote-debugging-port=9222",
+        "--no-sandbox",
+        "--disable-dev-shm-usage"
+      ]
     },
     "yandex": {
       "binaryLocation": "%USERPROFILE%\\AppData\\Local\\Yandex\\YandexBrowser\\Application\\browser.exe",
@@ -97,12 +100,12 @@
     }
   },
   "timeouts": {
-    "timeoutImplicit" : 0,
-    "timeoutCondition" : 30,
-    "timeoutScript" : 10,
-    "timeoutPageLoad" : 15,
+    "timeoutImplicit": 0,
+    "timeoutCondition": 30,
+    "timeoutScript": 10,
+    "timeoutPageLoad": 15,
     "timeoutPollingInterval": 300,
-    "timeoutCommand":120
+    "timeoutCommand": 120
   },
   "retry": {
     "number": 2,

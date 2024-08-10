@@ -13,8 +13,7 @@ public class FileUtils {
     public boolean isFileExist(File file) {
         try {
             Awaitility.await().atMost(SettingsTestData.getEnvData().getWait(), TimeUnit.SECONDS).until(file::exists);
-        }
-        catch (ConditionTimeoutException exception) {
+        } catch (ConditionTimeoutException exception) {
             return false;
         }
         return true;
