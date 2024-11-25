@@ -2,7 +2,7 @@ package tests;
 
 import aquality.selenium.browser.AqualityServices;
 import pages.MainPage;
-import utils.SettingsTestData;
+import utils.EnvDataReader;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -14,7 +14,7 @@ public abstract class BaseTest {
     @BeforeMethod
     public void setup() {
         getBrowser().maximize();
-        getBrowser().goTo(SettingsTestData.getEnvData().getHost());
+        getBrowser().goTo(EnvDataReader.getEnvData().getHost());
     }
 
     @AfterMethod
