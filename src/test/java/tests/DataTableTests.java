@@ -2,10 +2,10 @@ package tests;
 
 import pages.DataTablesPage;
 import constants.MainPageNavigation;
-import utils.SettingsTestData;
 import utils.StringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.TestDataReader;
 
 public class DataTableTests extends BaseTest {
     private final DataTablesPage dataTablesPage = new DataTablesPage();
@@ -17,6 +17,6 @@ public class DataTableTests extends BaseTest {
         for (String due : dataTablesPage.getFirstDueList()) {
             actualSum += StringUtils.getDoubleFromString(due);
         }
-        Assert.assertEquals(actualSum, SettingsTestData.getDataTableData().getExpectedDueSum(), "Sum is not correct");
+        Assert.assertEquals(actualSum, TestDataReader.getDataTableData().getExpectedDueSum(), "Sum is not correct");
     }
 }
