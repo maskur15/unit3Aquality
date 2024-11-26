@@ -6,8 +6,8 @@ import lombok.experimental.UtilityClass;
 import models.EnvData;
 
 @UtilityClass
-public class EnvDataReader extends JsonReader{
-    private final String ENVIRONMENT_PATH = RESOURCES_PATH + "environment/";
+public class EnvDataReader {
+    private final String ENVIRONMENT_PATH = JsonReader.RESOURCES_PATH + "environment/";
     private final ISettingsFile ENVIRONMENT_CONFIG = new JsonSettingsFile("env.json");
 
     private String getCurrentEnvironment() {
@@ -16,6 +16,6 @@ public class EnvDataReader extends JsonReader{
 
     public EnvData getEnvData() {
         String envConfigPath = "%s%s.json".formatted(ENVIRONMENT_PATH, getCurrentEnvironment());
-        return deserializeJson(envConfigPath, EnvData.class);
+        return JsonReader.deserializeJson(envConfigPath, EnvData.class);
     }
 }

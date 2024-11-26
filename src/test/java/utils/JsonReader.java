@@ -5,13 +5,14 @@ import aquality.selenium.browser.AqualityServices;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import com.google.gson.Gson;
+import lombok.experimental.UtilityClass;
 
-
+@UtilityClass
 public class JsonReader {
-    public static final String RESOURCES_PATH = "src/test/resources/";
-    private static final Gson GSON = new Gson();
+    public final String RESOURCES_PATH = "src/test/resources/";
+    private final Gson GSON = new Gson();
 
-    protected static <T> T deserializeJson(String filePath, Class<T> tClass) {
+    public <T> T deserializeJson(String filePath, Class<T> tClass) {
         try {
             return GSON.fromJson(new FileReader(filePath), tClass);
         } catch (FileNotFoundException e) {
