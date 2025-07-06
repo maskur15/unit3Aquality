@@ -1,6 +1,7 @@
 package tests;
 
 import constants.MainPageNavigation;
+import io.qameta.allure.*;
 import org.testng.Assert;
 import pages.BasicAuthPage;
 import org.testng.annotations.BeforeMethod;
@@ -22,7 +23,11 @@ public class BasicAuthTest extends BaseTest {
                 TestDataReader.getUserData().getUsername(),TestDataReader.getUserData().getPassword());
     }
 
-    @Test
+    @Test(priority = 1)
+    @Description("Authentication to the heroku site")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link(name = "website",url = "https://the-internet.herokuapp.com/")
+    @Owner("Maskur")
     public void basicAuthTest() {
         mainPage.clickNavigationLink(MainPageNavigation.BASIC_AUTH);
 

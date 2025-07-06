@@ -1,6 +1,7 @@
 package tests;
 
 import aquality.selenium.browser.AlertActions;
+import io.qameta.allure.testng.Tag;
 import pages.JavaScriptAlertsPage;
 import constants.MainPageNavigation;
 import org.testng.Assert;
@@ -11,7 +12,8 @@ import static aquality.selenium.browser.AqualityServices.getBrowser;
 public class AlertTest extends BaseTest {
     private final JavaScriptAlertsPage javaScriptAlertsPage = new JavaScriptAlertsPage();
 
-    @Test
+    @Test(description = "Javscirpts alert")
+    @Tag("regression")
     public void alertTest() {
         mainPage.clickNavigationLink(MainPageNavigation.JAVASCRIPT_ALERT);
         javaScriptAlertsPage.clickForJsAlertBtn();
